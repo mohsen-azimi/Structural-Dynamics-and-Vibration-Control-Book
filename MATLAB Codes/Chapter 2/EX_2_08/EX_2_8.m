@@ -1,11 +1,12 @@
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
 %% Example 2-8: Plot Response of An Underdamped SDOF 
 
 clear; close all; clc;
 %% Parameters
-tspan = [0 4];
-y0    = [0.02;0];
+tspan = [0 4];     % Time Span
+y0    = [0.02;0];  % initial State
 
-%% Calculate the Response & Plot
+%% Calculate The Response & Plot
 figure(1); set(figure(1), 'Position', [200   100   883   400])
            hold on; grid on; box on;
 
@@ -13,9 +14,9 @@ figure(1); set(figure(1), 'Position', [200   100   883   400])
         plot(t,y(:,1),'k','LineWidth',2);
         ylim([-0.02 0.02]);
     
-        set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-        xlabel('Time (s)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-        ylabel('Displacement (m)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+        set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+        xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+        ylabel('Displacement [m]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
 
 %% Print 
 print('EX_2_8','-dpng')

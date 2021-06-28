@@ -1,14 +1,15 @@
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
 %% Example 2-11: Plot The Response Envelope Curve
 
 clear; close all; clc;
 %% Parameters
-v0    = 1;
-vdot0 = 1;
-T     = 1;
-omega = 2*pi/T;
-t     = linspace(0,5,1000);
+v0    = 1;                  % Initial State
+vdot0 = 1;                  % Initial State
+T     = 1;                  % Period
+omega = 2*pi/T;             % Frequency
+t     = linspace(0,5,1000); % Time span
 
-%% Calculate the Response & Plot
+%% Calculate The Response & Plot
 figure(1); set(figure(1), 'Position', [200   100   883   300])
 
 i = 0;
@@ -31,9 +32,9 @@ for zeta  = [0.05, 0.5]
         plot(t,+Env,':k','LineWidth',2);
         plot(t,-Env,':k','LineWidth',2);
 
-        set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-        xlabel('Time (s)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-        ylabel('Displacement', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+        set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+        xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+        ylabel('Displacement [m]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
         legend({'Response';'Env.'},'location','northeast', 'orientation','horizontal')
 
         Y = ylim; X = xlim;

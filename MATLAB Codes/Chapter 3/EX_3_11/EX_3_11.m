@@ -1,3 +1,4 @@
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
 %% Example 3-11: Response of a Damped SDOF under Harmoinc Loading-1
 
 clear; close all; clc;
@@ -12,9 +13,9 @@ figure(1);  set(figure(1), 'Position', [200   100   883   400])
 
             plot(t,y(:,1),'-k','LineWidth',2);
 
-            set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-            xlabel('Time (s)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-            ylabel('Displacement (m)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+            set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+            xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+            ylabel('Displacement [m]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
 
 %% Print
 print('EX_3_11','-dpng')

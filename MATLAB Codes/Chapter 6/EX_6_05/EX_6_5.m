@@ -1,17 +1,18 @@
-%% Example 6-5: Two-degree-of-freedom system (undamped vehicle suspension)
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
+%% Example 6-5: Two-DOF Undamped Suspension System  
 
-clear; clf; close all; clc;
-%%
-prompt = {'Vehicle weight (lb):',...
+clear; close all; clc
+%% Input Parameters
+prompt={'Vehicle weight (lb):',...
         'Mass moment of inertia (slugs-ft^2):',...
         'Stiffness (lb/ft):',...
         'Distance from rear springs to cg (ft)',...
         'Distance from front springs to cg (ft)'};
-name = 'Parameters';
-numlines = [1 50;1 50;1 50;1 50; 1 50];
-defaultanswer = {'5000','400','2500','3.4','4.6'};
+name='Parameters';
+numlines=[1 50;1 50;1 50;1 50; 1 50];
+defaultanswer={'5000','400','2500','3.4','4.6'};
 options.Interpreter = 'tex';
-params = inputdlg(prompt,name,numlines,defaultanswer,options);
+params=inputdlg(prompt,name,numlines,defaultanswer,options);
 
 W = str2double(params{1});
 I = str2double(params{2});
@@ -27,7 +28,7 @@ M = [m, 0
 K=[2*k,     (b-a)*k
   (b-a)*k,  (b^2+a^2)*k]; % stiffness matrix
 
-% Eigenvalues and eigenvectors calculation
+% eigenvalues and eigenvectors calculation
 C = inv(M)*K;
 [V,D] = eig(C);
 w_1  = sqrt(D(1,1));

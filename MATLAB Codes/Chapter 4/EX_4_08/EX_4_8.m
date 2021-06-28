@@ -1,25 +1,23 @@
-%% Example 4-8: Response of a damped SDOF using step function
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
+%% Example 4-8: Response of A Damped SDOF to Step Impact Load 
 
 clear; close all; clc
-%% 
+%% System/Plant Parameters
 num = [0 0 6];
 den = [1 5 40];
 
-t=0:0.01:6;
+t   = 0:0.01:6;
+%% Plot
+figure(1); set(figure(1), 'Position', [200   100   883   400])
+        hold on; grid on; box on;
 
-%%
-figure(1)
-    set(figure(1), 'Position', [200   100   883   400])
-    hold on; grid on; box on;
+        x = step(num,den,t);
 
-x = step(num,den,t);
+        plot(t,x,'-k','LineWidth',2);
 
-plot(t,x,'-k','LineWidth',2);
+        set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+        xlabel('Time (s)', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+        ylabel('Amplitude', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
 
-set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-
-xlabel('Time (s)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-ylabel('Amplitude', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-
-%%
+%% Print
  print('EX_4_8','-dpng')

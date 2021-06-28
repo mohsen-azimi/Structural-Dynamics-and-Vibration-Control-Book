@@ -1,28 +1,35 @@
-%% Example 6-15: Free vibrartion response of a damped 2DOF system
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
+%% Example 6-15: Response of a two-DOF System 
 
-clear; close all; clc;
-%%
+clc; clear; close all;
+%% Parameters
 m = 30;     % Mass
 k = 20000;  % Stiffness
 c = 150;    % Damping
 
 % 4 x 4 matrices
-disp('4 x 4 Mass matrix');
-mt = [0,0,m,0;0,0,0,2*m;m,0,0,0;0,2*m,0,c]
-disp('4 x 4 stiffness matrix');
-kt = [-m,0,0,0;0,-2*m,0,0;0,0,3*k,-2*k;0,0,-2*k,2*k]
+disp('Mass Matrix: ');
+mt = [0, 0,  m,   0;
+      0, 0,  0, 2*m;
+      m, 0,  0,   0;
+      0, 2*m,0,   c]
+disp('Stiffness Matrix: ');
+kt = [-m,   0,    0,   0;
+       0,-2*m,    0,   0;
+       0,   0,  3*k,-2*k;
+       0,   0, -2*k, 2*k]
 Z = inv(mt)*kt;
+%% Eigenvalues
 [V,D] = eig(Z);
-disp('Eigenvalues');
+disp('Eigenvalues: ');
 V
-disp('Initial conditions');
+disp('Initial State: ');
 x0 = [0;0;0.005;0]
-disp('Integration constants');
+disp('Integration Constants');
 S = inv(V)*x0
 tk = linspace(0,2,1001);
+%% Time dependent response (x1 = y3 and x2 = y4)
 
-% Evaluation of time dependent response
-% Recall that x1 = y3 and x2 = y4
 for k = 1:1001
     t = tk(k);
     for i = 3:4
@@ -35,21 +42,17 @@ for k = 1:1001
     end
 end
 
-
 %% Plot
-figure(1)
-set(figure(1), 'Position', [200   100   883   400])
+figure(1); set(figure(1), 'Position', [200   100   883   400])
     hold on; grid on; box on;
     plot1 = plot(tk,x(:,1),tk,x(:,2));
 
     set(plot1(1),'LineStyle','-','DisplayName','{\itx}_{1}(t)','LineWidth',2,'Color',[0 0 0]);
     set(plot1(2),'LineStyle','--','DisplayName','{\itx}_{2}(t)','LineWidth',2,'Color',[0 0 0]);
-
-    set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-    xlabel('Time (s)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-    ylabel('{\itx} (m)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-
+    set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+    xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+    ylabel('{\itx} [m]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
     legend('show')
 
-%% Save
+%% Print
 print('EX_6_15','-dpng')

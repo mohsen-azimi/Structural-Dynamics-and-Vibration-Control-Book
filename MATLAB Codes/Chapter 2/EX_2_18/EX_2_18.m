@@ -1,13 +1,14 @@
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
 %% Example 2-18: Plot The Response (Displacement, Velocity, and Acceleration) of A Damped SDOF 
 
 clear; close all; clc;
 %% Parameters
 m  = 2;          % Mass 
 k  = 8;          % Stiffness 
-wn = sqrt(k/m);
-c1 = 1;          % Damping coefficient
+wn = sqrt(k/m);  % Frequency
+c1 = 1;          % Damping Coefficient
  
-% Initial conditions - displacement and velocity
+% Initial Conditions - Displacement and Velocity
 x(1)    = 0.3;
 xdot(1) = 0.5;
 xddot(1)=(-c1*xdot(1)-k*x(1))/m;
@@ -49,21 +50,21 @@ end
 figure(1);  set(figure(1), 'Position', [100   100   800   600])
             subplot(3,1,1)
             plot(t,x,'-k','LineWidth',2); ylim([-.4 .4]);
-                set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-                ylabel('Displacement', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+                set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+                ylabel('Displacement [m]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
             
 %% Plot Velocity
             subplot(3,1,2)
             plot(t,xdot,'--k','LineWidth',2); ylim([-.8 .8]);
-                set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-                ylabel('Velocity', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+                set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+                ylabel('Velocity [m/s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
             
 %% Plot Acceleration
             subplot(3,1,3)
             plot(t,xddot,':k','LineWidth',2); ylim([-2 2]);
-                set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-                xlabel('Time (s)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-                ylabel('Acceleration', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+                set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+                xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+                ylabel('Acceleration [m/{s^2}]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
 
 %% Print
 print('EX_2_18','-dpng')

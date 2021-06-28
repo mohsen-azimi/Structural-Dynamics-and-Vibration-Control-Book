@@ -1,3 +1,4 @@
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
 %% Example 3-14: Response of a Damped SDOF with Unbalanced mass
 
 clear; close all; clc
@@ -19,9 +20,9 @@ for zeta = [0.05,0.1,0.15,0.25,0.5,1,1.25,1.5]
     plot(r,G,LineType{i},'LineWidth',i/3);
 end
 
-    set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-    xlabel('\beta', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-    ylabel('\itu_{max}', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+    set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+    xlabel('\beta', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+    ylabel('\itu_{max}', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
     legend(Legend)
     
 %% Print

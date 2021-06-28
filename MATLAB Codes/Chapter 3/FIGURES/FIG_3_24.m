@@ -1,5 +1,8 @@
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
+%% Fig. 3-24 : Plot \itMu/me vs. \beta
+
 clear; close all; clc
-%%
+%% 
 beta1 = 0.0:0.01:.99;
 beta2 = 1.01:0.01:3.0;
 
@@ -24,9 +27,9 @@ figure(1);  set(figure(1), 'Position', [200   100   883   400])
 
             axis([0 3 0 6]); 
             legend(Legend)
-            set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-            xlabel('\beta', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-            ylabel('\itMu/me', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+            set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+            xlabel('\beta', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+            ylabel('\itMu/me', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
 end
 %
 %% Print

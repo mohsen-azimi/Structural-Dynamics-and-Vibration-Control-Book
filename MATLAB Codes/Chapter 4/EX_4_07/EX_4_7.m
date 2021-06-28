@@ -1,4 +1,5 @@
-%% Example 4-7: Response of a damped SDOF using step function
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
+%% Example 4-7: Response of A Damped SDOF to Impact Load (using step function)
 
 clear; close all; clc
 %% 
@@ -14,12 +15,19 @@ figure(1)
 
 x = step(num,den,t);
 
+
 plot(t,x,'-k','LineWidth',2);
 
-set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
+set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
 
-xlabel('Time (s)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-ylabel('Amplitude', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+ylabel('Amplitude', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+% title('Response of spring mass-damper system to initial condition', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+
+
+
+
+
 
 %%
  print('EX_4_7','-dpng')

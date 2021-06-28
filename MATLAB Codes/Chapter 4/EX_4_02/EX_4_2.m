@@ -1,4 +1,5 @@
-%% Example 4-2: Response of an undamped SDOF undel triangular dynamic load
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
+%% Example 4-2: Response of An Undamped SDOF undel Triangular Dynamic Load
 
 clear; close all; clc
 %%
@@ -46,5 +47,5 @@ set(figure(1), 'Position', [200   100   883   400])
 end
 
 
-%%
+%% Print
 print('EX_4_2','-dpng')

@@ -1,7 +1,8 @@
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
 %% Example 3-10: Response Modification Factor for a SDOF with Different Damping Ratios
 
 clear; close all; clc;
-%% Calculate and Plot
+%% Calculate The Response & Plot
 beta = 0.0:0.01:3.0;
     Legend   = {'\zeta = 0.001';'\zeta = 0.100';'\zeta = 0.200';'\zeta = 0.700';'\zeta = 1.000'};
     LineType = {'-k';           '--k';          '-.k';          ':k';           '-k'};
@@ -23,9 +24,9 @@ end
 %% Plot settings
             axis([0 3 0 6]); %set xy limits for the plot
             legend(Legend)
-            set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-            xlabel('\beta', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-            ylabel('R_d', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+            set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+            xlabel('\beta', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+            ylabel('R_d', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
 
 %% Print
 print('EX_3_10','-dpng')

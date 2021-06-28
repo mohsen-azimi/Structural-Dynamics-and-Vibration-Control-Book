@@ -1,3 +1,4 @@
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
 %% Figure 3-16: Response of a SDOF at Resonance Frequency
 
 clear; close all; clc;
@@ -21,9 +22,9 @@ figure(1);  set(figure(1), 'Position', [200   100   883   400])
             line([0 40], -[5 5],'Color','k','LineStyle','--','LineWidth',2)
 
             ylim([-6 6])
-            set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',12)               
-            xlabel('Time (s)', 'fontsize',14, 'fontname','Times New Roman','FontWeight','Bold')
-            ylabel('R(t)', 'fontsize',14, 'fontname','Times New Roman','FontWeight','Bold')
+            set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+            xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+            ylabel('R(t)', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
 
 %% Print
 print('FIG_3_16','-dpng')

@@ -1,10 +1,9 @@
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
 %% Figure 3-11: Response of An Undamped SDOF at Beating Frequency (Harmonic Loading)
 
 clear; close all; clc;
-%%
-
-
-figure(1);  set(figure(1), 'Position', [100   100   800   600])
+%% Plot
+figure(1);  set(figure(1), 'Position', [100   100   900   600])
 %% Subplot 1
             subplot(2,1,1)
             hold on; grid on; box on;
@@ -29,9 +28,9 @@ figure(1);  set(figure(1), 'Position', [100   100   800   600])
                 plot(t,y,'-k','LineWidth',2); grid on
                 plot(t,yEnv,'--r','LineWidth',2); grid on
 
-                set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',12)               
-                ylabel('Displacement', 'fontsize',14, 'fontname','Times New Roman','FontWeight','Bold')
-                title(['f_n = ',num2str(f,'%.1f'),' Hz,  f_0 = ',num2str(f0,'%.1f'),' Hz'], 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+                set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+                ylabel('Displacement', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+                title(['f_n = ',num2str(f,'%.1f'),' Hz,  f_0 = ',num2str(f0,'%.1f'),' Hz'], 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
                 legend('Total response','Envelope','location','north','numcolumns',2,'edgecolor','k')
             end
 
@@ -57,10 +56,10 @@ figure(1);  set(figure(1), 'Position', [100   100   800   600])
                     plot(t,y,'-k','LineWidth',2); grid on
                     plot(t,yEnv,'--r','LineWidth',2); grid on
 
-                    set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',12)               
-                    xlabel('Time (s)', 'fontsize',14, 'fontname','Times New Roman','FontWeight','Bold')
-                    ylabel('Displacement', 'fontsize',14, 'fontname','Times New Roman','FontWeight','Bold')
-                    title(['f_n = ',num2str(f,'%.1f'),' Hz,  f_0 = ',num2str(f0,'%.1f'),' Hz'], 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+                    set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+                    xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+                    ylabel('Displacement', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+                    title(['f_n = ',num2str(f,'%.1f'),' Hz,  f_0 = ',num2str(f0,'%.1f'),' Hz'], 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
                     legend('Total response','Envelope','location','north','numcolumns',2,'edgecolor','k')
                 end
 

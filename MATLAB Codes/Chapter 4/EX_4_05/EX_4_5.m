@@ -1,4 +1,5 @@
-%% Example 4-5: Response of a damped SDOF under rectangular dynamic/pulse loading
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
+%% Example 4-5: Response of a Damped SDOF under Rectangular Dynamic/Impact Load
 
 clear; close all; clc
 %%
@@ -36,5 +37,5 @@ set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'Fo
 xlabel('{\itn}', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
 ylabel('{\itx(n)}, [m]', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
 
-%%
+%% Print
 print('EX_4_5','-dpng')

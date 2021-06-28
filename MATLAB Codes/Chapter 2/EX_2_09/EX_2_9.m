@@ -1,15 +1,15 @@
-%% Example 2-9: Plot Displacemetn Response of An Underdamped SDOF with Different Damping Ratios 
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
+%% Example 2-9: Plot Response of An Underdamped SDOF with Different Damping Ratios 
 
 clear; close all; clc;
 %% Parameters
-wn  = 5;  % Natural frequency [rad/s]
-
+wn  = 5;                % Natural frequency [rad/s]
 x0  = 0;                % Initial displacement
 v0  = 60;               % Initial velocity [cm/s]
 t0  = 0;                % Initial time
 deltat = 0.01;          % Time step
 tf  = 6;                % Final time
-t   = [t0:deltat:tf];
+t   = [t0:deltat:tf];   % Time vector
 
 %% Calculate Response & Plot
 figure(1); set(figure(1), 'Position', [200   100   883   400])
@@ -27,9 +27,9 @@ for zeta = [0.05,0.1,0.2]
         plot(t,x,Lines{i},'LineWidth',2);  ylim([-15 15]);
 end
 
-        set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-        xlabel('Time (s)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
-        ylabel('Displacement (cm)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+        set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
+        xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+        ylabel('Displacement [cm]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
         legend(Legends,'location','northeast', 'orientation','horizontal')
 
 %% Print

@@ -1,4 +1,5 @@
-%% Example 4-1: Response of an undamped SDOF under rectangular dynamic load
+%% Structural Dynamics and Vibration Control(M. Azimi et al.)
+%% Example 4-1: Response of An SDOF to Rectangular Impact Load
 
 clear; close all; clc
 %%
@@ -13,7 +14,7 @@ k  = 1;
 %
 n  = 1000;
 t  = linspace(0,5*T,n);
-%%
+%%  Calculate and Plot The Response
     for i=1:n
         if t(i) <= td
             v(i)=(p0/k)*(1-cos(w*t(i)));
@@ -25,33 +26,35 @@ t  = linspace(0,5*T,n);
     end
 
 
-figure(1)
-set(figure(1), 'Position', [100   100   800   600])
-subplot(2,2,ii); grid on; box on; hold on
+................................................
+figure(1); set(figure(1), 'Position', [100   100   800   600])
+   
+    subplot(2,2,ii); grid on; hold on; box on
+
     plot(t,v,'LineWidth',2,'Color',[0 0 0]);
 
     axis([0 5.1 -2.5 2.5]);
 
     X=xlim; Y=ylim;
     text(X(2)/2,Y(1)/1.3,['t_d/T = ',num2str(r,'%1.2f')],...
-        'HorizontalAlignment','center','fontsize',10,...
+        'HorizontalAlignment','center','fontsize',16,...
         'fontname','Times New Roman','FontWeight','Bold',...
         'EdgeColor','k','BackgroundColor','w','LineWidth',1)
 
-    set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',10)               
-end
-%%
-for subp = 3:4
-    subplot(2,2,subp)
-    xlabel('Time (s)', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+set(gca, 'LineWidth',1, 'FontWeight','normal', 'FontName','Times New Roman', 'FontSize',14)               
 end
 
+%% Labels
+for subp = 3:4
+    subplot(2,2,subp)
+    xlabel('Time [s]', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
+end
 
 for subp = 1:2:4
         subplot(2,2,subp)
 
-    ylabel('Displacement or Amplification', 'fontsize',12, 'fontname','Times New Roman','FontWeight','Bold')
+    ylabel('Displ. or Amp.', 'fontsize',16, 'fontname','Times New Roman','FontWeight','Bold')
 end
 
-%%
+%% Print
 print('EX_4_1','-dpng')
